@@ -2,13 +2,20 @@ const express = require('express');
 const app = express();
 const db = require('./config/mongoose');
 require('dotenv').config();
-const Router = require('./routers');
 const PORT = process.env.PORT || 5050;
+const expressLayouts = require('express-ejs-layouts');
+app.use(express.static('./assets'));
+
+app.use(expressLayouts);
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
+const Router = require('./routers/index');
+
 //set up teh view engine
+
 app.set('view engine','ejs');
-app.set('viws', './views');
+app.set('viws', __dirname + '/views');
 //for using static file 
-app.use(express.static('public'));
 app.use('/', Router);
 //catch-up all the routes for error:
 app.use((req,res)=> {
