@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+#main-footer {
+    background-color:#3b5998; /* Set your desired background color */
+
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-group {
+    display: flex;
+}
+
+.button-group button {
+    background-color:#8b9dc3; /* Set the background color for the buttons */
+    color:#fff; /* Set the text color for the buttons */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    margin-left: 15px;
+    margin-right: 15px;
+    width:40px;
+    height: 40px;
+
+}

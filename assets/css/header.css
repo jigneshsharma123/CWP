@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color:#3b5998; /* Set your desired background color */
+    color: #ffffff; /* Set your desired text color */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo a {
+    text-decoration: none; /* Remove underline on the anchor tag */
+    color: #ffffff; /* Set the text color for the logo/title */
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 40px; /* Adjust the size of your logo */
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .logo h1 {
+    margin: 0;
+    font-size: 1.5em; /* Adjust the font size of your title */
+  }
+  
+  .auth-buttons button {
+    padding: 8px 16px;
+    font-size: 1em;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color:#8b9dc3; /* Set the background color for the buttons */
+    color:#fff; /* Set the text color for the buttons */
+    border: none;
+    border-radius: 4px;
+  }
+  
+  /* Hover effect for buttons */
+  .auth-buttons button:hover {
+    background-color: #8ca1cd; /* Set the background color on hover */
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 600px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+     
+    }
+    .logo {
+        margin-bottom: 10px; /* Add some spacing between logo and buttons */
+      }
+      .auth-buttons {
+        width: 100%; /* Make the button container full width */
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons horizontally */
+      }
+  
+    .auth-buttons button {
+        width: 100%; /* Make the button full width */
+        margin-top: 5px;
+      }
+      
+  
+  }
+  
