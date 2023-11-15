@@ -39,4 +39,6 @@ module.exports.create = async(req,res)=> {
 //sign in and createSession
 module.exports.createSession = (req,res) => {
   //TODO later
+  //passport.js implimention for local strategy
+  return res.redirect('/');
 }

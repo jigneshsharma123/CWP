@@ -7,13 +7,14 @@ body {
 
 #main-footer {
     background-color:#3b5998; /* Set your desired background color */
-
+    
     color: white;
     text-align: center;
     padding: 10px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    height: auto;
 }
 
 .footer-content {

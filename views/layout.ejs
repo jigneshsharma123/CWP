@@ -11,10 +11,16 @@
 
 </head>
 <body>
-    <%- include('_header') %>
-
-    <%- body %>
-
+    <div class="clearfix">
+        <!-- Header -->
+        <%- include('_header') %>
+    
+        <!-- Form or other content -->
+        <div class="content">
+            <%- body %>
+        </div>
+    </div>
+    
     <%- include('_footer') %>
 </body>
 </html>

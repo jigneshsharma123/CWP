@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="/css/signup.css">
-
 <div class="container">
     <form class="signup-form" action="/users/create" method="POST">
         <h2>Sign Up</h2>
@@ -11,9 +10,16 @@
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
-        <label for="password">Confirm Password:</label>
-        <input type="password" id="password" name="confirm_password" required>
-        
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+
         <button type="submit">Sign Up</button>
+
+        <!-- Google and LinkedIn buttons -->
+        <div class="oauth-buttons">
+            <a href="/auth/google" class="google-btn">Sign Up with Google</a>
+            <a href="/auth/linkedin" class="linkedin-btn">Sign Up with LinkedIn</a>
+        </div>
     </form>
 </div>
