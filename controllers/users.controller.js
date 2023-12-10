@@ -6,12 +6,18 @@ module.exports.profile = (req,res) => {
 }
 //render the sigup page 
 module.exports.signup = (req,res) => {
+  if(req.isAuthenticated()) {
+   return   res.redirect("/users/profile")
+  }
   return res.render('sign_up', {
     title : 'CWP | SIGN UP'
   });
 };
 //render the signin page
 module.exports.signin = (req,res)=> {
+  if(req.isAuthenticated()) {
+   return res.redirect("/users/profile")
+  }
   return res.render('sign_in', {
     title : 'CWP | SIGN IN'
   });

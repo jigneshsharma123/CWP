@@ -35,7 +35,8 @@ passport.deserializeUser(async(id,done)=> {
     done(error,null);
   }
 });
-
+//end of configuration. 
+//second steps afte configuring the passport.js
 //check if the user is authenticated 
 
 //for sending the data of the user to use

@@ -3,6 +3,9 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const db = require('./config/mongoose');
 const session =  require('express-session');
+const MongoClient = require('mongodb').MongoClient;
+const MongoStore = require('connect-mongo');
+const mongoose = require('mongoose');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 app.use(express.urlencoded({extended : true}));
@@ -22,16 +25,21 @@ const Router = require('./routers/index');
 app.set('view engine','ejs');
 app.set('viws', __dirname + '/views');
 
-app.use(session({
-    name : 'CWP',
-    //todo change the secret before deployment in production 
-    secret : 'somethingelse',
-    saveUninitialized : false,
-    resave : false,
-    cookie : {
-        maxAge : (1000 * 60 * 100)
-    } 
-}));
+//mongo store is used to store the session cookie in the db
+app.use(
+    session({
+      // Session configuration options
+      secret: 'your-secret-key',
+      resave: false,
+      saveUninitialized: false,
+      store: new MongoStore({ 
+        mongooseConnection: db,
+        collection: 'sessions',
+        autoRemove: 'disabled',
+      }), 
+    })
+  );
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
